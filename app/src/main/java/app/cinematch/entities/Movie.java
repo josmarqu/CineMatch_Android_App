@@ -8,10 +8,12 @@ public class Movie {
     private int[] genreIds;
     @SerializedName("original_language")
     private String orgLang;
-    @SerializedName("overview")
     private String overview;
     @SerializedName("vote_average")
     private double voteAverage;
+    @SerializedName("poster_path")
+    private String posterPath;
+    private double popularity;
     @SerializedName("release_date")
     private String releaseDate;
     @SerializedName("id")
@@ -44,5 +46,13 @@ public class Movie {
 
     public int getMovieId() {
         return movieId;
+    }
+
+    public String getPosterPath() {
+        return posterPath;
+    }
+
+    public double getPopularity() {
+        return popularity;
     }
 }
