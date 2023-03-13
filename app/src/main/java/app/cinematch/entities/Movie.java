@@ -14,6 +14,8 @@ public class Movie {
     private double voteAverage;
     @SerializedName("release_date")
     private String releaseDate;
+    @SerializedName("id")
+    private int movieId;
 
 
     public String getTitle() {
@@ -38,5 +40,9 @@ public class Movie {
 
     public String getReleaseDate() {
         return releaseDate;
+    }
+
+    public int getMovieId() {
+        return movieId;
     }
 }
