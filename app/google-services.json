@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "890051392382",
+    "firebase_url": "https://cinematch-2023-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "cinematch-2023",
+    "storage_bucket": "cinematch-2023.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:890051392382:android:bfd79ec422637e9594b92f",
+        "android_client_info": {
+          "package_name": "app.cinematch"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "890051392382-k0pm23b9j3be5cibohf0qqm3d1v106vk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCF--X1UcAwi00Bvh9BH8EnqNTr_KStapo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "890051392382-bauujiuopkc9kjf74g1amulpb0huh4fk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
