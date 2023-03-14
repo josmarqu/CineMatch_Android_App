@@ -25,10 +25,30 @@
         android:drawableLeft="@drawable/common_google_signin_btn_icon_light_normal"
         android:elevation="8dp"
         android:text="@string/strSignInGoole"
+
         android:backgroundTint="@color/blue"
+        android:background="@drawable/rounded_button"
         android:textColor="#fff"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/themovielogo"
+        tools:layout_editor_absoluteX="183dp"
+        tools:layout_editor_absoluteY="675dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="API BY"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="183dp"
+        tools:layout_editor_absoluteY="642dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
