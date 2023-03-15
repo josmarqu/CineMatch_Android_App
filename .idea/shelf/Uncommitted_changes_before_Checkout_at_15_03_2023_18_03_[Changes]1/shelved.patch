@@ -1,0 +1,77 @@
+Index: .gradle/buildOutputCleanup/cache.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#Sat Mar 11 19:04:32 CET 2023\r\ngradle.version=7.5\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/.gradle/buildOutputCleanup/cache.properties b/.gradle/buildOutputCleanup/cache.properties
+--- a/.gradle/buildOutputCleanup/cache.properties	
++++ b/.gradle/buildOutputCleanup/cache.properties	
+@@ -1,2 +1,2 @@
+-#Sat Mar 11 19:04:32 CET 2023
+-gradle.version=7.5
++#Wed Mar 15 17:17:24 CET 2023
++gradle.version=7.5.1
+Index: local.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>## This file must *NOT* be checked into Version Control Systems,\r\n# as it contains information specific to your local configuration.\r\n#\r\n# Location of the SDK. This is only used by Gradle.\r\n# For customization when using a Version Control System, please read the\r\n# header note.\r\n#Sat Mar 11 19:02:49 CET 2023\r\nsdk.dir=/home/pedro/Android/Sdk\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/local.properties b/local.properties
+--- a/local.properties	
++++ b/local.properties	
+@@ -4,5 +4,5 @@
+ # Location of the SDK. This is only used by Gradle.
+ # For customization when using a Version Control System, please read the
+ # header note.
+-#Sat Mar 11 19:02:49 CET 2023
+-sdk.dir=/home/pedro/Android/Sdk
++#Wed Mar 15 17:17:01 CET 2023
++sdk.dir=C\:\\Users\\Jun\\AppData\\Local\\Android\\Sdk
+Index: .idea/deploymentTargetDropDown.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"deploymentTargetDropDown\">\r\n    <runningDeviceTargetSelectedWithDropDown>\r\n      <Target>\r\n        <type value=\"RUNNING_DEVICE_TARGET\" />\r\n        <deviceKey>\r\n          <Key>\r\n            <type value=\"SERIAL_NUMBER\" />\r\n            <value value=\"RZ8R31FDCEA\" />\r\n          </Key>\r\n        </deviceKey>\r\n      </Target>\r\n    </runningDeviceTargetSelectedWithDropDown>\r\n    <timeTargetWasSelectedWithDropDown value=\"2023-03-15T15:52:06.016002Z\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/deploymentTargetDropDown.xml b/.idea/deploymentTargetDropDown.xml
+--- a/.idea/deploymentTargetDropDown.xml	
++++ b/.idea/deploymentTargetDropDown.xml	
+@@ -7,11 +7,11 @@
+         <deviceKey>
+           <Key>
+             <type value="SERIAL_NUMBER" />
+-            <value value="RZ8R31FDCEA" />
++            <value value="adb-2B221FDH300B8U-SMhmJJ._adb-tls-connect._tcp" />
+           </Key>
+         </deviceKey>
+       </Target>
+     </runningDeviceTargetSelectedWithDropDown>
+-    <timeTargetWasSelectedWithDropDown value="2023-03-15T15:52:06.016002Z" />
++    <timeTargetWasSelectedWithDropDown value="2023-03-15T16:16:25.484291900Z" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: gradle/wrapper/gradle-wrapper.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#Sat Mar 11 18:11:07 CET 2023\r\ndistributionBase=GRADLE_USER_HOME\r\ndistributionUrl=https\\://services.gradle.org/distributions/gradle-7.5-bin.zip\r\ndistributionPath=wrapper/dists\r\nzipStorePath=wrapper/dists\r\nzipStoreBase=GRADLE_USER_HOME\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/gradle/wrapper/gradle-wrapper.properties b/gradle/wrapper/gradle-wrapper.properties
+--- a/gradle/wrapper/gradle-wrapper.properties	
++++ b/gradle/wrapper/gradle-wrapper.properties	
+@@ -1,6 +1,6 @@
+-#Sat Mar 11 18:11:07 CET 2023
++#Wed Mar 15 17:16:58 CET 2023
+ distributionBase=GRADLE_USER_HOME
+-distributionUrl=https\://services.gradle.org/distributions/gradle-7.5-bin.zip
++distributionUrl=https\://services.gradle.org/distributions/gradle-7.5.1-bin.zip
+ distributionPath=wrapper/dists
+ zipStorePath=wrapper/dists
+ zipStoreBase=GRADLE_USER_HOME
