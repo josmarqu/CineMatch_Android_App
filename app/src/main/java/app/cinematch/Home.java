@@ -83,7 +83,7 @@ public class Home extends AppCompatActivity {
     }
 
     private void irMain() {
-        Intent intent = new Intent(Home.this, Main.class);
+        Intent intent = new Intent(Home.this, MainActivity.class);
         startActivity(intent);
         finish();
     }
