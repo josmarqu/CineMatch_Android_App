@@ -8,16 +8,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import androidx.gridlayout.widget.GridLayout;
-import android.widget.LinearLayout;
-import android.widget.ScrollView;
-import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -29,7 +23,6 @@ import com.google.firebase.database.FirebaseDatabase;
 
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Survey extends AppCompatActivity {
     GridLayout gdlytAct;
