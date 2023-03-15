@@ -24,16 +24,19 @@
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/imageView"
-        app:shapeAppearanceOverlay="@style/roundedImageView"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="55dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.084"
+        app:shapeAppearanceOverlay="@style/roundedImageView"
         tools:srcCompat="@tools:sample/avatars" />
 
     <Button
@@ -75,19 +78,19 @@
         app:layout_constraintTop_toBottomOf="@+id/tvPrefTitle">
 
         <TextView
-            android:id="@+id/tvPrefDir"
+            android:id="@+id/txtDirPre"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:text="@string/strPrefDir" />
 
         <TextView
-            android:id="@+id/tvPrefActors"
+            android:id="@+id/txtActPre"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:text="@string/strPrefActors" />
 
         <TextView
-            android:id="@+id/tvPrefGenre"
+            android:id="@+id/txtGenPre"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:text="@string/strPrefGenre" />

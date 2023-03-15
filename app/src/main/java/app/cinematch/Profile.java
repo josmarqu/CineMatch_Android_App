@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.target.Target;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.firebase.auth.FirebaseAuth;
@@ -128,7 +129,7 @@ public class Profile extends AppCompatActivity {
 
         textViewRespuesta.setText(String.format(getString(R.string.hello), personGivenName));
         Glide.with(this)
-                .load(personPhoto)
+                .load(personPhoto).override(400,400)
                 .into(imgView);
 
         mButtonCerrarSesion.setOnClickListener(new View.OnClickListener() {
