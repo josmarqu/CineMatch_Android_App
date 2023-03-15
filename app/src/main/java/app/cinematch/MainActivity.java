@@ -6,6 +6,8 @@ import android.os.Bundle;
 
 import app.cinematch.api.APIRestService;
 import app.cinematch.api.RetrofitClient;
+import app.cinematch.entities.Cast;
+import app.cinematch.entities.MovieDetails;
 import app.cinematch.entities.Theater;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -24,7 +26,39 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Theater> call, Response<Theater> response) {
                 Theater theater = response.body();
-                System.out.println(theater.getMovies()[0].getTitle());
+                int id = theater.getMovies()[0].getMovieId();
+                Call<MovieDetails> call2 = apiRestService.getMovieDetails(id, "en-US");
+                call2.enqueue(new Callback<MovieDetails>() {
+                    @Override
+                    public void onResponse(Call<MovieDetails> call, Response<MovieDetails> response) {
+                        MovieDetails movieDetails = response.body();
+                        String genre = movieDetails.getGenres().get(0).getName();
+                        System.out.println(genre);
+                    }
+
+                    @Override
+                    public void onFailure(Call<MovieDetails> call, Throwable t) {
+
+                    }
+                });
+                Call<Cast> call3 = apiRestService.getMovieCast(id, "en-US");
+                call3.enqueue(new Callback<Cast>() {
+                    @Override
+                    public void onResponse(Call<Cast> call, Response<Cast> response) {
+                        Cast cast = response.body();
+                        String actor = cast.getActors().get(0).getName();
+                        String crew = cast.getCrew().get(0).getName();
+                        System.out.println(actor);
+                        System.out.println(crew);
+                    }
+
+                    @Override
+                    public void onFailure(Call<Cast> call, Throwable t) {
+
+                    }
+                });
+
+
             }
 
             @Override
