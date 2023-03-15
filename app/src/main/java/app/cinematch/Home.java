@@ -28,11 +28,11 @@ public class Home extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_pru);
+        setContentView(R.layout.activity_profile);
 
         mAuth = FirebaseAuth.getInstance();
 
-        mButtonCerrarSecion = findViewById(R.id.btnCerrarSecion);
+        mButtonCerrarSecion = findViewById(R.id.btnLogOut);
 
         textViewRespuesta = findViewById(R.id.textViewBien);
 
@@ -40,24 +40,13 @@ public class Home extends AppCompatActivity {
 
         GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(this);
         if (acct != null) {
-            String personName = acct.getDisplayName();
             String personGivenName = acct.getGivenName();
-            String personFamilyName = acct.getFamilyName();
-            String personEmail = acct.getEmail();
-            String personId = acct.getId();
             Uri personPhoto = acct.getPhotoUrl();
 
-            textViewRespuesta.setText("Bienvenido " + personGivenName);
+            textViewRespuesta.setText(String.format(String.valueOf(R.string.hello), personGivenName));
             Glide.with(this)
                     .load(personPhoto)
                     .into(imgView);
-
-            System.out.println(personName);
-            System.out.println(personGivenName);
-            System.out.println(personFamilyName);
-            System.out.println(personEmail);
-            System.out.println(personId);
-            System.out.println(personPhoto);
         }
 
         mButtonCerrarSecion.setOnClickListener(new View.OnClickListener() {
