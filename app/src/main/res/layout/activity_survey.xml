@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scActors"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -16,6 +17,7 @@
         android:gravity="center"
         android:text="@string/select_favourites"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -40,28 +42,26 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="@string/actors"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textStyle="bold | italic" />
 
-        <Spinner
-            android:id="@+id/spnAct"
+        <ScrollView
+            android:id="@+id/scView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="74dp"
             android:layout_weight="1"
-            android:minHeight="48dp"
-            />
+            android:isScrollContainer="true"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:scrollbarStyle="outsideInset"
+            android:scrollbars="vertical">
 
-        <TextView
-            android:id="@+id/txtActSel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            <androidx.gridlayout.widget.GridLayout
+                android:id="@+id/gridActors"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-        <Button
-            android:id="@+id/btnResAct"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_weight="1"
-            android:text="@string/reset_actors" />
+            </androidx.gridlayout.widget.GridLayout>
+        </ScrollView>
 
         <TextView
             android:id="@+id/txtDir"
@@ -70,30 +70,26 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="@string/directors"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textStyle=" bold | italic" />
 
-        <Spinner
-            android:id="@+id/spnDir"
+        <ScrollView
+            android:id="@+id/svDir"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="74dp"
             android:layout_weight="1"
-            android:entries="@array/famous_directors"
-            android:minHeight="48dp"
-            android:prompt="@string/app_name"
-            />
+            android:isScrollContainer="true"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:scrollbarStyle="outsideInset"
+            android:scrollbars="vertical">
 
-        <TextView
-            android:id="@+id/txtDirSel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            <androidx.gridlayout.widget.GridLayout
+                android:id="@+id/gdDir"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-        <Button
-            android:id="@+id/btnResDir"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_weight="1"
-            android:text="@string/reset_directors" />
+            </androidx.gridlayout.widget.GridLayout>
+        </ScrollView>
 
         <TextView
             android:id="@+id/txtGen"
@@ -102,35 +98,57 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="@string/genres"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textStyle="bold | italic" />
 
-        <Spinner
-            android:id="@+id/spnGen"
+        <ScrollView
+            android:id="@+id/svGenre"
+            android:layout_width="match_parent"
+            android:layout_height="74dp"
+            android:layout_weight="1"
+            android:isScrollContainer="true"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:scrollbarStyle="outsideInset"
+            android:scrollbars="vertical">
+
+            <androidx.gridlayout.widget.GridLayout
+                android:id="@+id/gdGenre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </androidx.gridlayout.widget.GridLayout>
+        </ScrollView>
+
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:entries="@array/genres"
-            android:minHeight="48dp" />
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/txtGenSel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            <Button
+                android:id="@+id/btnResetAll"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:text="@string/reset_All" />
 
-        <Button
-            android:id="@+id/btnResGen"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_weight="1"
-            android:text="@string/reset_genres" />
+            <Space
+                android:id="@+id/spacer"
+                android:layout_width="5dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5" />
 
-        <Button
-            android:id="@+id/btnSend"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_weight="1"
-            android:text="@string/send" />
+            <Button
+                android:id="@+id/btnSend"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:text="@string/send" />
+        </LinearLayout>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

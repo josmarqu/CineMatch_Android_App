@@ -4,11 +4,10 @@
     <string name="hello">Hello %s!!!</string>
     <string name="log_out">Log out</string>
     <string name="actors">Actors</string>
-    <string name="reset_actors">Reset Actors</string>
     <string name="directors">Directors</string>
-    <string name="reset_directors">Reset Directors</string>
     <string name="genres">Genres</string>
-    <string name="reset_genres">Reset Genres</string>
+    <string name="reset_All">Reset All</string>
+    <string name="reset_genre">Reset</string>
     <string name="send">Send</string>
     <string name="preferences">These are your preferences:</string>
     <string name="change">Change my preferences</string>
