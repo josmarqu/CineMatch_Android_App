@@ -6,8 +6,6 @@ public class Movie {
     private String title;
     @SerializedName("genre_ids")
     private int[] genreIds;
-    @SerializedName("original_language")
-    private String orgLang;
     private String overview;
     @SerializedName("vote_average")
     private double voteAverage;
@@ -26,10 +24,6 @@ public class Movie {
 
     public int[] getGenreIds() {
         return genreIds;
-    }
-
-    public String getOrgLang() {
-        return orgLang;
     }
 
     public String getOverview() {
