@@ -11,4 +11,8 @@
     <string name="send">Send</string>
     <string name="preferences">These are your preferences:</string>
     <string name="change">Change my preferences</string>
+    <string name="strPrefTitle">Your preferences are :</string>
+    <string name="strPrefDir">Directors: %s!</string>
+    <string name="strPrefActors">Actors/Actresses: %s!</string>
+    <string name="strPrefGenre">Genres: %s!</string>
 </resources>
