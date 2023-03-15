@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">CineMatch</string>
+    <string name="strApiLogo">POWERED BY</string>
+    <string name="hello">Hello %s!!!</string>
+    <string name="log_out">Log out</string>
+    <string name="actors">Actors</string>
+    <string name="reset_actors">Reset Actors</string>
+    <string name="directors">Directors</string>
+    <string name="reset_directors">Reset Directors</string>
+    <string name="genres">Genres</string>
+    <string name="reset_genres">Reset Genres</string>
+    <string name="send">Send</string>
+    <string name="preferences">These are your preferences:</string>
+    <string name="change">Change my preferences</string>
+    <string name="select_favourites">Select your favorite actors, directors and genres</string>
+    <string name="incorrect_input">Please select at least 3 options for each category</string>
 </resources>

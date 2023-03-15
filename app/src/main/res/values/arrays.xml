@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--    Top 30 most famous actors in the world-->
+    <array name="famous_actors">
+        <item>Robert De Niro</item>
+        <item>Jack Nicholson</item>
+        <item>Al Pacino</item>
+        <item>Tom Hanks</item>
+        <item>Marlon Brando</item>
+        <item>Dustin Hoffman</item>
+        <item>Anthony Hopkins</item>
+        <item>Leonardo DiCaprio</item>
+        <item>Clint Eastwood</item>
+        <item>Brad Pitt</item>
+        <item>Tom Cruise</item>
+        <item>Sean Connery</item>
+        <item>Johnny Depp</item>
+        <item>Christian Bale</item>
+        <item>Michael Caine</item>
+        <item>Paul Newman</item>
+        <item>Jackie Chan</item>
+        <item>Will Smith</item>
+        <item>Robert Downey Jr.</item>
+        <item>Samuel L. Jackson</item>
+        <item>Robin Williams</item>
+        <item>Steve McQueen</item>
+        <item>James Stewart</item>
+        <item>James Dean</item>
+        <item>James Cagney</item>
+        <item>Gene Hackman</item>
+        <item>Richard Burton</item>
+        <item>Gregory Peck</item>
+        <item>Laurence Olivier</item>
+        <item>Henry Fonda</item>
+    </array>
+
+<!--    Top 30 most famous directors in the world-->
+    <array name="famous_directors">
+        <item>Steven Spielberg</item>
+        <item>Stanley Kubrick</item>
+        <item>Alfred Hitchcock</item>
+        <item>Quentin Tarantino</item>
+        <item>Woody Allen</item>
+        <item>Clint Eastwood</item>
+        <item>Francis Ford Coppola</item>
+        <item>Orson Welles</item>
+        <item>David Lynch</item>
+        <item>Christopher Nolan</item>
+        <item>James Cameron</item>
+        <item>George Lucas</item>
+        <item>Ingmar Bergman</item>
+        <item>Michelangelo Antonioni</item>
+        <item>David Fincher</item>
+        <item>Wes Anderson</item>
+        <item>David Lean</item>
+        <item>David Cronenberg</item>
+        <item>Robert Altman</item>
+        <item>John Ford</item>
+        <item>John Huston</item>
+        <item>John Cassavetes</item>
+        <item>John Frankenheimer</item>
+        <item>John Schlesinger</item>
+        <item>John Woo</item>
+        <item>John Hughes</item>
+        <item>John Carpenter</item>
+        <item>John Landis</item>
+        <item>John Lasseter</item>
+        <item>John Singleton</item>
+    </array>
+
+    <!--    Genres -->
+    <array name="genres">
+        <item>Comedy</item>
+        <item>Horror</item>
+        <item>Thriller</item>
+        <item>Sci-Fi</item>
+        <item>Crime</item>
+        <item>Adventure</item>
+        <item>Animation</item>
+        <item>Family</item>
+        <item>Documentary</item>
+        <item>Biography</item>
+        <item>Drama</item>
+        <item>Mystery</item>
+        <item>War</item>
+        <item>History</item>
+        <item>Music</item>
+        <item>Western</item>
+        <item>Sport</item>
+        <item>Fantasy</item>
+        <item>Romance</item>
+        <item>Action</item>
+    </array>
+</resources>
