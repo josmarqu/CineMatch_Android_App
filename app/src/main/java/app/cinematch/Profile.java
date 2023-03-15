@@ -16,8 +16,9 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class Home extends AppCompatActivity {
-    Button mButtonCerrarSecion;
+public class Profile extends AppCompatActivity {
+    Button mButtonCerrarSesion;
+    Button btnSur;
 
     FirebaseAuth mAuth;
 
@@ -32,7 +33,8 @@ public class Home extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        mButtonCerrarSecion = findViewById(R.id.btnLogOut);
+        mButtonCerrarSesion = findViewById(R.id.btnLogOut);
+        btnSur = findViewById(R.id.btnSur);
 
         textViewRespuesta = findViewById(R.id.textViewBien);
 
@@ -49,10 +51,19 @@ public class Home extends AppCompatActivity {
                     .into(imgView);
         }
 
-        mButtonCerrarSecion.setOnClickListener(new View.OnClickListener() {
+        mButtonCerrarSesion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 logout();
+            }
+        });
+
+        btnSur.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Profile.this, Survey.class);
+                startActivity(intent);
+                finish();
             }
         });
     }
@@ -72,7 +83,7 @@ public class Home extends AppCompatActivity {
     }
 
     private void irMain() {
-        Intent intent = new Intent(Home.this, Main.class);
+        Intent intent = new Intent(Profile.this, Main.class);
         startActivity(intent);
         finish();
     }

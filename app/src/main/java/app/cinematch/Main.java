@@ -1,7 +1,6 @@
 package app.cinematch;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -92,7 +91,7 @@ public class Main extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            irHome();
+                            irSurvey();
                             FirebaseUser user = mAuth.getCurrentUser();
                             updateUI(user);
                         }
@@ -104,15 +103,21 @@ public class Main extends AppCompatActivity {
                 });
     }
 
+    private void irSurvey() {
+        Intent intent = new Intent(Main.this, Survey.class);
+        startActivity(intent);
+        finish();
+    }
+
     private void updateUI(FirebaseUser user) {
         user = mAuth.getCurrentUser();
-        if (user != null){
-            irHome();
+        if (user != null) {
+            irProfile();
         }
     }
 
-    private void irHome() {
-        Intent intent = new Intent(Main.this, Home.class);
+    private void irProfile() {
+        Intent intent = new Intent(Main.this, Profile.class);
         startActivity(intent);
         finish();
     }

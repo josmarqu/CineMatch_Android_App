@@ -9,4 +9,6 @@
     <string name="genres">Of the following movie genres, which one do you like the most?</string>
     <string name="reset_genres">Reset Genres</string>
     <string name="send">Send</string>
+    <string name="preferences">These are your preferences:</string>
+    <string name="change">Change my preferences</string>
 </resources>
