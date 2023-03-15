@@ -71,7 +71,7 @@ public class Profile extends AppCompatActivity {
                     actors.add(actor);
                 }
                 for (String actor : actors) {
-                    txtActSel.append(actor + ", ");
+                    txtActSel.append(" | " + actor + " | ");
                 }
             }
 
@@ -91,7 +91,7 @@ public class Profile extends AppCompatActivity {
                     directors.add(director);
                 }
                 for (String director : directors) {
-                    txtDirSel.append(director + ", ");
+                    txtDirSel.append(" | " + director + " | ");
                 }
             }
 
@@ -111,7 +111,7 @@ public class Profile extends AppCompatActivity {
                     genres.add(genre);
                 }
                 for (String genre : genres) {
-                    txtGenSel.append(genre + ", ");
+                    txtGenSel.append(" | " + genre + " | ");
                 }
 
             }

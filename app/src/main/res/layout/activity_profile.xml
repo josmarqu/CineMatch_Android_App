@@ -81,19 +81,22 @@
             android:id="@+id/txtDirPre"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:text="@string/strPrefDir" />
+            android:text="@string/strPrefDir"
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/txtActPre"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:text="@string/strPrefActors" />
+            android:text="@string/strPrefActors"
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/txtGenPre"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:text="@string/strPrefGenre" />
+            android:text="@string/strPrefGenre"
+            android:textStyle="bold"/>
     </LinearLayout>
 
     <TextView
@@ -106,6 +109,7 @@
         android:text="@string/strPrefTitle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewBien" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewBien"
+        android:textStyle="bold|italic"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

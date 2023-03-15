@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">CineMatch</string>
-    <string name="hello">Hello %s!!!</string>
+    <string name="hello">Hello %s</string>
     <string name="log_out">Log out</string>
     <string name="actors">Of the following actors, which one do you know the most movies from?</string>
     <string name="reset_actors">Reset Actors</string>
