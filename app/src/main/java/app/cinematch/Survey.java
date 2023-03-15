@@ -211,6 +211,8 @@ public class Survey extends AppCompatActivity {
                 }
             }
         });
+        Intent intent = new Intent(Survey.this, TheaterActivity.class);
+        startActivity(intent);
     }
 
     private void signOut() {

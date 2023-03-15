@@ -13,4 +13,5 @@
     <string name="change">Change my preferences</string>
     <string name="select_favourites">Select your favorite actors, directors and genres</string>
     <string name="incorrect_input">Please select at least 3 options for each category</string>
+    <string name="profile">Profile</string>
 </resources>
