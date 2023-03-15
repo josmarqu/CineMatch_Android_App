@@ -45,7 +45,7 @@ public class Profile extends AppCompatActivity {
             String personGivenName = acct.getGivenName();
             Uri personPhoto = acct.getPhotoUrl();
 
-            textViewRespuesta.setText(String.format(String.valueOf(R.string.hello), personGivenName));
+            textViewRespuesta.setText(String.format(getString(R.string.hello), personGivenName));
             Glide.with(this)
                     .load(personPhoto)
                     .into(imgView);

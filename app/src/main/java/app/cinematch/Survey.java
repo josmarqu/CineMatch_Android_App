@@ -1,6 +1,7 @@
 package app.cinematch;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -10,6 +11,14 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.bumptech.glide.Glide;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
@@ -27,14 +36,25 @@ public class Survey extends AppCompatActivity {
     Button btnResGen;
     Button btnSend;
 
-    ArrayList<String> actores;
-    ArrayList<String> directores;
-    ArrayList<String> generos;
+    ArrayList<String> actores = new ArrayList<>();
+    ArrayList<String> directores = new ArrayList<>();
+    ArrayList<String> generos = new ArrayList<>();
+
+    FirebaseAuth mAuth;
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef = database.getReference("CineMatch");
+    String userId;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_survey);
+
+        mAuth = FirebaseAuth.getInstance();
+
+        actores.add("Tom Cruise");
+        directores.add("Steven Spielberg");
+        generos.add("Acción");
 
         spnAct = findViewById(R.id.spnAct);
         spnDir = findViewById(R.id.spnDir);
@@ -121,7 +141,31 @@ public class Survey extends AppCompatActivity {
                 Intent intent = new Intent(Survey.this, Profile.class);
                 startActivity(intent);
                 finish();
+
+                GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(Survey.this);
+                if (acct != null) {
+                    userId = acct.getId();
+
+                    myRef.child(userId).child("Actores").setValue(actores);
+                    myRef.child(userId).child("Directores").setValue(directores);
+                    myRef.child(userId).child("Generos").setValue(generos);
+                }
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser user = mAuth.getCurrentUser();
+        if (user == null) {
+            irMain();
+        }
+    }
+
+    private void irMain() {
+        Intent intent = new Intent(Survey.this, Main.class);
+        startActivity(intent);
+        finish();
     }
 }
