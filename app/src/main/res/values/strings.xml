@@ -23,4 +23,6 @@
     <string name="strPrefDir">Directors: </string>
     <string name="strPrefActors">Actors/Actresses: </string>
     <string name="strPrefGenre">Genres: </string>
+    <string name="prod_ctry">"Production Country: "</string>
+    <string name="release_date">"Release date: "</string>
 </resources>

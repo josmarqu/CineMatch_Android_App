@@ -55,7 +55,7 @@ public class DetailsActivity extends AppCompatActivity {
         TextView tvTitle = findViewById(R.id.tvTitle);
         tvTitle.setText(movie.getTitle());
         TextView tvReleaseDate = findViewById(R.id.tvReleaseDate);
-        tvReleaseDate.setText(movie.getReleaseDate());
+        tvReleaseDate.setText(getString(R.string.release_date) + movie.getReleaseDate());
         TextView tvOverview = findViewById(R.id.tvOverview);
         tvOverview.setText(movie.getOverview());
         Retrofit retrofit = RetrofitClient.getClient(APIRestService.BASE_URL);
@@ -66,7 +66,7 @@ public class DetailsActivity extends AppCompatActivity {
             public void onResponse(Call<MovieDetails> call, retrofit2.Response<MovieDetails> response) {
                 MovieDetails movieDetails = response.body();
                 TextView tvCtry = findViewById(R.id.tvCtry);
-                tvCtry.setText(movieDetails.getProdCtries().get(0).getName());
+                tvCtry.setText(getString(R.string.prod_ctry) + movieDetails.getProdCtries().get(0).getName());
                 TextView tvGenres = findViewById(R.id.tvGenres);
                 tvGenres.setText(movieDetails.getGenres().get(0).getName());
             }
