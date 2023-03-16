@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateUI(FirebaseUser user) {
-        if (mAuth.getCurrentUser().getEmail() != null) {
+        if (user != null) {
             Intent intent = new Intent(this, TheaterActivity.class);
             startActivity(intent);
         }
