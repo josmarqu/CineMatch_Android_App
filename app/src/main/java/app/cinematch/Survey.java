@@ -46,9 +46,6 @@ public class Survey extends AppCompatActivity {
     int maxcheckedGen = 5;
     int checkContGen = 0;
 
-    
-    
-
     FirebaseAuth mAuth;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference("CineMatch");
@@ -176,8 +173,6 @@ public class Survey extends AppCompatActivity {
             gdlytGen.addView(checkBox);
         }
 
-
-
         btnResetAll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -214,13 +209,5 @@ public class Survey extends AppCompatActivity {
         Intent intent = new Intent(Survey.this, TheaterActivity.class);
         startActivity(intent);
     }
-
-    private void signOut() {
-        mAuth.signOut();
-        MainActivity.mGoogleSignInClient.signOut();
-        Intent intent = new Intent(Survey.this, MainActivity.class);
-        startActivity(intent);
-    }
-
 
 }

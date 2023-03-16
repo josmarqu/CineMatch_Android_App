@@ -76,6 +76,12 @@ private ArrayList<Movie> movies = new ArrayList<>();
                 System.out.println("Switch is off");
             }
         });
+        MenuItem profileItem = menu.findItem(R.id.app_bar_profile);
+        profileItem.setOnMenuItemClickListener(item -> {
+            Intent intent = new Intent(TheaterActivity.this, Profile.class);
+            startActivity(intent);
+            return true;
+        });
         return true;
     }
 }

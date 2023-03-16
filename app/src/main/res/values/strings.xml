@@ -16,4 +16,11 @@
     <string name="profile">Profile</string>
     <string name="overview">Overview</string>
     <string name="director">Director</string>
+    <string name="reset_actors">Reset Actors</string>
+    <string name="reset_directors">Reset Directors</string>
+    <string name="reset_genres">Reset Genres</string>
+    <string name="strPrefTitle">Your preferences are :</string>
+    <string name="strPrefDir">Directors: </string>
+    <string name="strPrefActors">Actors/Actresses: </string>
+    <string name="strPrefGenre">Genres: </string>
 </resources>
