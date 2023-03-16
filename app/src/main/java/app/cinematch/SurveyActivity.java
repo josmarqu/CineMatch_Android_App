@@ -24,7 +24,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
-public class Survey extends AppCompatActivity {
+public class SurveyActivity extends AppCompatActivity {
     GridLayout gdlytAct;
     GridLayout gdlytDir;
     GridLayout gdlytGen;
@@ -195,19 +195,24 @@ public class Survey extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(listTextActors.size() < 1 || listTextDir.size() < 1 || listTextGenre.size() < 1) {
-                    Toast.makeText(Survey.this, "Please select at least one actor, director and genre", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SurveyActivity.this, "Please select at least one actor, director and genre", Toast.LENGTH_SHORT).show();
                 } else {
-                    GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(Survey.this);
+                    GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(SurveyActivity.this);
                     userId = acct.getId();
 
                     myRef.child(userId).child("Actors").setValue(listTextActors);
                     myRef.child(userId).child("Directors").setValue(listTextDir);
                     myRef.child(userId).child("Genres").setValue(listTextGenre);
                 }
+                Intent intent = new Intent(SurveyActivity.this, TheaterActivity.class);
+                startActivity(intent);
             }
         });
-        Intent intent = new Intent(Survey.this, TheaterActivity.class);
-        startActivity(intent);
+    }
+
+    @Override
+    public void onBackPressed() {
+        // No hacer nada
     }
 
 }

@@ -1,9 +1,7 @@
 package app.cinematch;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -16,7 +14,6 @@ import com.bumptech.glide.Glide;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -26,7 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Profile extends AppCompatActivity {
+public class ProfileActivity extends AppCompatActivity {
     Button mButtonCerrarSesion;
     Button btnSur;
 
@@ -52,8 +49,6 @@ public class Profile extends AppCompatActivity {
         String userId = acct.getId();
 
         mAuth = FirebaseAuth.getInstance();
-        System.out.println(userId);
-
         mButtonCerrarSesion = findViewById(R.id.btnLogOut);
         btnSur = findViewById(R.id.btnSur);
 
@@ -62,66 +57,11 @@ public class Profile extends AppCompatActivity {
         txtDirSel = findViewById(R.id.txtDirPre);
         txtGenSel = findViewById(R.id.txtGenPre);
 
-        DatabaseReference actorsRef = myRef.child(userId).child("Actors");
-        actorsRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                List<String> actors = new ArrayList<>();
-                for (DataSnapshot actorSnapshot : dataSnapshot.getChildren()) {
-                    String actor = actorSnapshot.getValue(String.class);
-                    actors.add(actor);
-                }
-                for (String actor : actors) {
-                    txtActSel.append(" | " + actor + " | ");
-                }
-            }
+        getActorsUser(userId);
 
-            @Override
-            public void onCancelled(DatabaseError error) {
-                // Maneja el error aquí
-            }
-        });
+        getDirectorsUser(userId);
 
-        DatabaseReference directorsRef = myRef.child(userId).child("Directors");
-        directorsRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                List<String> directors = new ArrayList<>();
-                for (DataSnapshot directorSnapshot : dataSnapshot.getChildren()) {
-                    String director = directorSnapshot.getValue(String.class);
-                    directors.add(director);
-                }
-                for (String director : directors) {
-                    txtDirSel.append(" | " + director + " | ");
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-                // Maneja el error aquí
-            }
-        });
-
-        DatabaseReference genresRef = myRef.child(userId).child("Genres");
-        genresRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                List<String> genres = new ArrayList<>();
-                for (DataSnapshot genreSnapshot : dataSnapshot.getChildren()) {
-                    String genre = genreSnapshot.getValue(String.class);
-                    genres.add(genre);
-                }
-                for (String genre : genres) {
-                    txtGenSel.append(" | " + genre + " | ");
-                }
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-                // Maneja el error aquí
-            }
-        });
+        getGenresUser(userId);
 
         imgView = findViewById(R.id.imageView);
 
@@ -143,8 +83,75 @@ public class Profile extends AppCompatActivity {
         btnSur.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Profile.this, Survey.class);
+                Intent intent = new Intent(ProfileActivity.this, SurveyActivity.class);
                 startActivity(intent);
+            }
+        });
+    }
+
+    private void getGenresUser(String userId) {
+        DatabaseReference genresRef = myRef.child(userId).child("Genres");
+        genresRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                List<String> genres = new ArrayList<>();
+                for (DataSnapshot genreSnapshot : dataSnapshot.getChildren()) {
+                    String genre = genreSnapshot.getValue(String.class);
+                    genres.add(genre);
+                }
+                for (String genre : genres) {
+                    txtGenSel.append(" | " + genre + " | ");
+                }
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Maneja el error aquí
+            }
+        });
+    }
+
+    private void getDirectorsUser(String userId) {
+        DatabaseReference directorsRef = myRef.child(userId).child("Directors");
+        directorsRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                List<String> directors = new ArrayList<>();
+                for (DataSnapshot directorSnapshot : dataSnapshot.getChildren()) {
+                    String director = directorSnapshot.getValue(String.class);
+                    directors.add(director);
+                }
+                for (String director : directors) {
+                    txtDirSel.append(" | " + director + " | ");
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Maneja el error aquí
+            }
+        });
+    }
+
+    private void getActorsUser(String userId) {
+        DatabaseReference actorsRef = myRef.child(userId).child("Actors");
+        actorsRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                List<String> actors = new ArrayList<>();
+                for (DataSnapshot actorSnapshot : dataSnapshot.getChildren()) {
+                    String actor = actorSnapshot.getValue(String.class);
+                    actors.add(actor);
+                }
+                for (String actor : actors) {
+                    txtActSel.append(" | " + actor + " | ");
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Maneja el error aquí
             }
         });
     }
@@ -152,7 +159,7 @@ public class Profile extends AppCompatActivity {
     private void logout() {
         mAuth.signOut();
         MainActivity.mGoogleSignInClient.signOut();
-        Intent intent = new Intent(Profile.this, MainActivity.class);
+        Intent intent = new Intent(ProfileActivity.this, MainActivity.class);
         startActivity(intent);
     }
 
