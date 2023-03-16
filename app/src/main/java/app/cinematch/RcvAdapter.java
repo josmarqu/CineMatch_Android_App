@@ -14,7 +14,7 @@ import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 
 import app.cinematch.entities.Movie;
-import app.cinematch.entities.Theater;
+
 
 public class RcvAdapter extends RecyclerView.Adapter<RcvAdapter.FrgViewHolder> implements View.OnClickListener {
     private ArrayList<Movie> movies;
@@ -24,9 +24,14 @@ public class RcvAdapter extends RecyclerView.Adapter<RcvAdapter.FrgViewHolder> i
         this.movies = movies;
     }
 
+    public void setOnClickListener(View.OnClickListener listener) {
+        this.listener = listener;
+    }
     @Override
     public void onClick(View view) {
-
+        if (listener != null) {
+            listener.onClick(view);
+        }
     }
 
     @NonNull
@@ -40,8 +45,6 @@ public class RcvAdapter extends RecyclerView.Adapter<RcvAdapter.FrgViewHolder> i
     @Override
     public void onBindViewHolder(@NonNull RcvAdapter.FrgViewHolder holder, int position) {
         Movie movie = movies.get(position);
-        System.out.println(movie.getTitle());
-        System.out.println(movie.getPosterPath());
         Uri url = Uri.parse("https://image.tmdb.org/t/p/w500" + movie.getPosterPath());
         Glide.with(holder.imgFrg.getContext()).load(url).into(holder.imgFrg);
     }

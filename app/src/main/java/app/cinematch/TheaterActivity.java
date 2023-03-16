@@ -1,10 +1,15 @@
 package app.cinematch;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Switch;
 
 import java.util.ArrayList;
 
@@ -26,6 +31,8 @@ private ArrayList<Movie> movies = new ArrayList<>();
         setData();
     }
 
+
+
     private void setData() {
         Retrofit retrofit = RetrofitClient.getClient(APIRestService.BASE_URL);
         APIRestService apiRestService = retrofit.create(APIRestService.class);
@@ -41,6 +48,12 @@ private ArrayList<Movie> movies = new ArrayList<>();
                 RcvAdapter adapter = new RcvAdapter(movies);
                 RecyclerView rcvMovies = findViewById(R.id.rcvMovies);
                 rcvMovies.setAdapter(adapter);
+                adapter.setOnClickListener(v -> {
+                    Movie movie = movies.get(rcvMovies.getChildAdapterPosition(v));
+                    Intent intent = new Intent(TheaterActivity.this, DetailsActivity.class);
+                    intent.putExtra("movie", movie);
+                    startActivity(intent);
+                });
             }
 
             @Override
@@ -53,6 +66,16 @@ private ArrayList<Movie> movies = new ArrayList<>();
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
+        MenuItem switchItem = menu.findItem(R.id.app_bar_switch);
+        View actionView = switchItem.getActionView();
+        Switch switchWidget = actionView.findViewById(R.id.switchWidget);
+        switchWidget.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                System.out.println("Switch is on");
+            } else {
+                System.out.println("Switch is off");
+            }
+        });
         return true;
     }
 }
